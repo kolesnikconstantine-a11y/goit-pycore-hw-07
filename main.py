@@ -292,7 +292,6 @@ def main():
         elif command == "add":
             print(add_contact(args, book))
             
-
         elif command == "change":
             print(change_contact(args, book))
 
@@ -302,32 +301,18 @@ def main():
         elif command == "all":
             show_all(book)
             
-
         elif command == "add-birthday":
             print(add_birthday(args, book))
 
         elif command == "show-birthday":
             print(show_birthday(args, book))
             
-
         elif command == "birthdays":
             print(birthdays(args, book))
             
-
         else:
             print("Invalid command.")
 
 
-
 if __name__ == "__main__":
     main()
-
-
-
-
-
-
-        
-
-
-
