@@ -117,7 +117,6 @@ class AddressBook(UserDict):
             birthday_date = birthday.strftime("%Y-%m-%d")
             # Визначення дня народження у цьому році
             birthday_this_year = birthday.replace(year=today.year)
-            #print(birthday_this_year)
             # Отримання номера дня тижня,  Поверне число від 0 (понеділок) до 6 (неділя)
             day_of_week = birthday_this_year.weekday()
 
@@ -263,7 +262,8 @@ def show_birthday(args, book):
     if record is not None:
         for key, record in book.data.items():
             if key == name:
-                return record.birthday
+                date_object = datetime.strptime(str(record.birthday), "%Y-%m-%d %H:%M:%S")
+                return date_object.strftime("%d.%m.%Y")
     else:
         return "No such contact."
     
@@ -273,8 +273,7 @@ def birthdays(args, book):
     return book.get_upcoming_birthdays()
 
 
-# Програма повинна мати функцію main(),
-#  яка управляє основним циклом обробки команд.
+# Програма повинна мати функцію main(), яка управляє основним циклом обробки команд.
 def main():
     book = AddressBook()
     print("Welcome to the assistant bot!")
