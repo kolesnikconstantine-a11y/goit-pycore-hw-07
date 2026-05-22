@@ -188,7 +188,7 @@ def input_error(func):
         except KeyError:
             "Enter the argument for the command"
         except ValueError:
-            return "Give me name and phone please."
+            return "Give me name and phone please. or Invalid date format. Use DD.MM.YYYY"
         except IndexError:
             return "Enter the argument for the command"
     return inner
